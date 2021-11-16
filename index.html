@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes App</title>
+    <style>
+        body {
+            /* background-color: aliceblue */
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-items {
+            background-color: #8d8dee;
+            border-radius: 1vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            height: 30vw;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+            rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+            rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+            rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+            rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .quotes {
+            /* border: 3px solid green; */
+            width: 40vw;
+        }
+
+        .quotes>p {
+            font-size: 2.5rem;
+            font-family: monospace;
+        }
+
+        .quotation {
+            font-size: 5rem;
+            font-family: fangsong;
+        }
+
+        .author {
+            /* border: 2px solid blue; */
+            width: 40vw;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .author>p>i {
+            font-size: 2rem;
+        }
+
+        .btns{
+            display: flex;
+            justify-content: center;
+            width: 50vw;
+            margin-top: 1vw;
+        }
+        .btn {
+            border: 2px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            color: black;
+            padding: 0.5vw 1vw;
+            font-size: 1.3rem;
+            text-align: center;
+            width: 20vw;
+        }
+        .btn:nth-child(2){
+            margin-left: 1vw;
+        }
+        .btn:hover {
+            background-color: #070928;
+            color: #f8f8fa;
+        }
+        @media only screen and (min-width: 900px) and (max-width: 1100px){
+            .main-items{
+                width: 62vw;
+                height: 40vw;
+            }
+            .quotes{
+                width: 50vw;
+            }
+            .quotes > p{
+                font-size: 3rem;
+            }
+            .author{
+                width: 50vw;
+            }
+            .author > p > i{
+                font-size: 2.5rem;
+            }
+            .btns{
+                width: 62vw;
+            }
+            .btn{
+                font-size: 1.5rem;
+                width: 25vw;
+            }
+        }
+        @media only screen and (min-width: 700px) and (max-width: 900px){
+            .main-items{
+                width: 72vw;
+                height: 50vw;
+            }
+            .quotes{
+                width: 50vw;
+            }
+            .quotes > p{
+                font-size: 3rem;
+            }
+            .author{
+                width: 50vw;
+            }
+            .author > p > i{
+                font-size: 2.5rem;
+            }
+            .btns{
+                width: 72vw;
+            }
+            .btn{
+                font-size: 1.5rem;
+                width: 30vw;
+            }
+        }
+        @media only screen and (min-width: 500px) and (max-width: 700px){
+            .main-items{
+                width: 82vw;
+                height: 60vw;
+            }
+            .quotes{
+                width: 60vw;
+            }
+            .quotes > p{
+                font-size: 2.6rem;
+            }
+            .author{
+                width: 60vw;
+            }
+            .author > p > i{
+                font-size: 2rem;
+            }
+            .btns{
+                width: 82vw;
+            }
+            .btn{
+                font-size: 1.5rem;
+                width: 35vw;
+            }
+        }
+        @media only screen and (min-width: 350px) and (max-width: 500px){
+            .main-items{
+                width: 98vw;
+                height: 78vw;
+            }
+            .quotes{
+                width: 80vw;
+            }
+            .quotes > p{
+                font-size: 2rem;
+            }
+            .author{
+                width: 80vw;
+            }
+            .author > p > i{
+                font-size: 2rem;
+            }
+            .btns{
+                width: 92vw;
+            }
+            .btn{
+                font-size: 1.5rem;
+                width: 40vw;
+            }
+        }
+        @media only screen and (min-width: 250px) and (max-width: 350px){
+            .main-items{
+                width: 98vw;
+                height: 78vw;
+            }
+            .quotes{
+                width: 80vw;
+            }
+            .quotes > p{
+                font-size: 2rem;
+            }
+            .author{
+                width: 80vw;
+            }
+            .author > p > i{
+                font-size: 2rem;
+            }
+            .btns{
+                width: 92vw;
+            }
+            .btn{
+                font-size: 1.3rem;
+                width: 40vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-items">
+            <div class="quotes">
+                <!-- <span class="quotation">"</span> -->
+                <p> {%Quote%}</p>
+            </div>
+            <div class="author">
+                <p><i>-{%Author%}-</i></p>
+            </div>
+        </div>
+        <div class="btns">
+            <a href="" onclick="getAnotherQuote()" class="btn">Another Quote</a>
+            <a href="" onclick="tweetNow()" class="btn">Tweet</a>
+        </div>
+    </div>
+    <script>
+        const getAnotherQuote = ()=>{
+            window.location.reload()
+        }
+        const VarQuote = 'Var-Quote';
+        const VarAuthor = 'Var-Author';
+        const Authors = `-${VarAuthor}-`
+        // console.log(VarQuote,VarAuthor);
+        const tweetNow = ()=> {
+            const tweetPost = `https://twitter.com/intent/tweet?text= ${VarQuote} ${Authors}`
+            window.open(tweetPost)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "quteapp",
+  "version": "1.0.0",
+  "description": "this quotes generation web app which enable you to post quote on your twitter account by just one click",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "app"
+  ],
+  "author": "Zavi",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "requests": "^0.3.0"
+  }
+}
