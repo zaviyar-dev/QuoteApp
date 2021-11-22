@@ -22,7 +22,7 @@ const server = http.createServer((req,res)=>{
         })
         getDataBYApiInJson.on('end', (err)=>{
             if (err) {
-                res.end('We could not access the data ', err)
+                res.end('<h1>We could not access the data</h1>', err)
             }
             else{
                 res.end()
